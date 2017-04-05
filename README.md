@@ -1,2 +1,2 @@
 # express-basicauth
-A simple express middleware for basic authentication.
+A simple express middleware for basic authentication
