@@ -1,0 +1,19 @@
+{
+  "name": "express-basicauth",
+  "version": "1.0.0",
+  "description": "A simple express middleware for basic authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariusespejo/express-basicauth.git"
+  },
+  "author": "Marius Espejo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mariusespejo/express-basicauth/issues"
+  },
+  "homepage": "https://github.com/mariusespejo/express-basicauth#readme"
+}
