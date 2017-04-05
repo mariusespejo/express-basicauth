@@ -14,7 +14,7 @@ npm install --save express-basicauth
 
 ## How to use with Express
 
-### This will authenticate if username entered is 'username' and password entered is 'password'.
+This will authenticate if username entered is 'username' and password entered is 'password'.
 
 ```javascript
 var express = require('express');
@@ -25,7 +25,7 @@ var app = express();
 app.use(basicAuth());
 ```
 
-### Using a custom username and password:
+Using a custom username and password:
 
 ```javascript
 var express = require('express');
@@ -36,7 +36,7 @@ var app = express();
 app.use(basicAuth({username: 'name', password: 'pass' }));
 ```
 
-### You can also optionally provide your own custom athenticator. 
+You can also optionally provide your own custom athenticator. 
 
 
 ```javascript
