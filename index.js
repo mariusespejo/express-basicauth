@@ -1,14 +1,18 @@
+const regeneratorRuntime = require("regenerator-runtime");
 var basicAuth = require('basic-auth');
 
-async function authenticator(name, pass, username, password) {
-  return username === name && password === pass;
-}
-
-module.exports = function (options = { username: 'username', password: 'password', authenticator }) {
+module.exports = function (options = { username: 'username', password: 'password' }) {
   return async function (req, res, next) {
-    const { username, password, authenticator } = options;
+    const { username, password } = options;
+    let { authenticator } = options;
     var credentials = basicAuth(req);
     let authenticated;
+
+    async function basicAuthenticator(name, pass, username, password) {
+      return username === name && password === pass;
+    }
+
+    if (!authenticator) authenticator = basicAuthenticator;
 
     try {
       authenticated = await authenticator(credentials.name, credentials.pass, username, password);

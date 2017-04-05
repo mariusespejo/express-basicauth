@@ -2,12 +2,11 @@
   "name": "express-basicauth",
   "version": "1.0.0",
   "description": "A simple express middleware for basic authentication",
-  "main": "index.js",
-  "engines": {
-    "node": ">=7.6.0"
-} ,
+  "main": "lib/index.js",
   "scripts": {
-    "test": "tape index.spec.js | faucet"
+    "test": "npm run compile && tape index.spec.js | faucet",
+    "compile": "babel index.js -d lib",
+    "prepublish": "npm run compile"
   },
   "pre-commit": [
     "test"
@@ -23,9 +22,12 @@
   },
   "homepage": "https://github.com/mariusespejo/express-basicauth#readme",
   "dependencies": {
-    "basic-auth": "^1.1.0"
+    "basic-auth": "^1.1.0",
+    "regenerator-runtime": "^0.10.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.3.2",
     "faucet": "0.0.1",
     "pre-commit": "^1.2.2",
     "tape": "^4.6.3"
