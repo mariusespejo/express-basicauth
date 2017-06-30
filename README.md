@@ -45,7 +45,7 @@ var basicAuth = require('express-basicauth');
 var app = express();
 
 /**
- * All you need is a function which returns a promise that is resolved once authenticated.
+ * All you need is a function which returns a promise that is resolved once authenticated
  * You can also use async functions for this 
  */
 function myCustomAuthenticator(username, password) {
